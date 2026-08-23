@@ -2,18 +2,18 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
         int L=0;
-        int MAX_profit=0;
-        for(int R=1;R<prices.size();R++) {
-            if(prices[L]<prices[R]) {
-                int current_profit = prices[R] - prices[L];
-                    MAX_profit=max(current_profit,MAX_profit);
+        int max_value=0;
+        for(int R=1;R<prices.size();R++){
+            if(prices[L]<prices[R]){
+                int current=prices[R]-prices[L];
+                max_value=max(max_value,current);
             }
-            
-            else{
+            else {
                 L=R;
             }
+                
         }
-     return MAX_profit;
-
-        }
+        return max_value;
+    }
+   
 };
